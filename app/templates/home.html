@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Summarization and Question Answering</title>
+</head>
+<body>
+    <h1>Welcome to the Text Summarization and Question Answering App</h1>
+    {% if current_user.is_authenticated %}
+        <p>Hello, {{ current_user.username }}!</p>
+        <a href="{{ url_for('summarize') }}">Summarize Text</a>
+        <a href="{{ url_for('question_answer') }}">Ask a Question</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    {% endif %}
+</body>
+</html>
